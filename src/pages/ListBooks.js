@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BookShelf from '../components/BookShelf';
 
-const ListBooks = ({ books_list, updateBookList }) => {
+const ListBooks = ({ books_list, updateBookList, listed_books_shelf }) => {
     console.log('test 2', books_list);
     return (
         <div className="list-books">
@@ -11,9 +11,9 @@ const ListBooks = ({ books_list, updateBookList }) => {
             </div>
             <div className="list-books-content">
                 <div>
-                    <BookShelf title="Currently Reading" updateBookList={updateBookList} books_list={books_list.filter(book => book.shelf === "currentlyReading")} />
-                    <BookShelf title="Want To Read" updateBookList={updateBookList} books_list={books_list.filter(book => book.shelf === "wantToRead")} />
-                    <BookShelf title="Read" updateBookList={updateBookList} books_list={books_list.filter(book => book.shelf === "read")} />
+                    <BookShelf title="Currently Reading" listed_books_shelf={listed_books_shelf} updateBookList={updateBookList} books_list={books_list.filter(book => book.shelf === "currentlyReading")} />
+                    <BookShelf title="Want To Read" listed_books_shelf={listed_books_shelf} updateBookList={updateBookList} books_list={books_list.filter(book => book.shelf === "wantToRead")} />
+                    <BookShelf title="Read" listed_books_shelf={listed_books_shelf} updateBookList={updateBookList} books_list={books_list.filter(book => book.shelf === "read")} />
                 </div>
             </div>
             <div className="open-search">

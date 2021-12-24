@@ -1,7 +1,10 @@
 import React from 'react'
 
-const Book = ({ book, updateBookList}) => {
+const Book = ({ book, updateBookList, listed_books_shelf}) => {
     let {title, authors, imageLinks, shelf} = book;
+
+    shelf = listed_books_shelf[book.id];
+    // console.log(listed_books_shelf, book.id);
 
     let changeBookShelf = (event) => {
         let shelf = event.target.value;

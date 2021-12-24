@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Book from '../components/Book';
 
-const SearchBook = ({ books_list, filterList, updateBookList }) => {
+const SearchBook = ({ books_list, filterList, updateBookList, listed_books_shelf }) => {
     let myTimeout = null;
 
     let search = event => {
@@ -10,11 +10,18 @@ const SearchBook = ({ books_list, filterList, updateBookList }) => {
             clearTimeout(myTimeout);
         }
 
+        // this for not hiting the server aggressively
         let val = event.target.value
         myTimeout = setTimeout(() => {
-            filterList(val)
+            filterList(val);
         }, 1000);   
     }
+
+    useEffect(() => {
+        return () => {
+            filterList('');
+        }
+    }, []);
 
     return (
         <div className="search-books">
@@ -37,7 +44,7 @@ const SearchBook = ({ books_list, filterList, updateBookList }) => {
                 <ol className="books-grid">
                     {
                         books_list.map(book => {
-                            return <Book updateBookList={updateBookList} key={book.id} book={book} />
+                            return <Book listed_books_shelf={listed_books_shelf} updateBookList={updateBookList} key={book.id} book={book} />
                         })
                     }
                 </ol>
