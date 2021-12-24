@@ -18,5 +18,5 @@ To get started developing right away:
     project were, the router will guid the user to</li>
     <li>Project Components in "src/components" that consist of (Book.js, BookShelf.js) those are the repeatable parts of the page, The Book component is used in both of the pages we have</li>
     <li>The search box using delaed request usning the setTimeout to not hit ther server aggressively</li>
-    
+    <li>Storing the books shelf in hased state as an object to be used in search result better than doing loops</li>
 <ul>
