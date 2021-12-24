@@ -17,6 +17,7 @@ const SearchBook = ({ books_list, filterList, updateBookList, listed_books_shelf
         }, 1000);   
     }
 
+    // clear searcg result when close
     useEffect(() => {
         return () => {
             filterList('');
