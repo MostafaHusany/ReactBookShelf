@@ -17,7 +17,7 @@ const ListBooks = ({ books_list, updateBookList, listed_books_shelf }) => {
                 </div>
             </div>
             <div className="open-search">
-              <Link className="button" to="/search-book" >Add a book</Link>
+              <Link className="button" to="/search" >Add a book</Link>
             </div>
         </div>
     )

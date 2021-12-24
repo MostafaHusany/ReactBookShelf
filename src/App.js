@@ -47,6 +47,10 @@ class BooksApp extends React.Component {
           this.setState({
             search_list : res
           });
+        } else {
+          this.setState({
+            search_list : []
+          });
         }
         console.log(res);
       });
@@ -81,7 +85,7 @@ class BooksApp extends React.Component {
       <div className="app">
       <Switch>
         <Route exact path="/" render={() => <ListBooks listed_books_shelf={this.state.listed_books_shelf} updateBookList={this.updateBookList} books_list={this.state.books_list} /> } />
-        <Route exact path="/search-book" render={() => <SearchBook listed_books_shelf={this.state.listed_books_shelf} updateBookList={this.updateBookList} filterList={this.filterList} books_list={this.state.search_list} /> } />
+        <Route exact path="/search" render={() => <SearchBook listed_books_shelf={this.state.listed_books_shelf} updateBookList={this.updateBookList} filterList={this.filterList} books_list={this.state.search_list} /> } />
       </Switch>
       </div>
     )
