@@ -17,5 +17,6 @@ To get started developing right away:
     <li> We have project pages in "src/pages" that consist of (ListBooks.js, SearchBook.js).<br/>Those are the main pages of the 
     project were, the router will guid the user to</li>
     <li>Project Components in "src/components" that consist of (Book.js, BookShelf.js) those are the repeatable parts of the page, The Book component is used in both of the pages we have</li>
-    <li> 
+    <li>The search box using delaed request usning the setTimeout to not hit ther server aggressively</li>
+    
 <ul>
